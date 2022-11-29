@@ -6,7 +6,7 @@ db = DAL('sqlite://storage.sqlite')
 # This creates the Contacts Table
 db.define_table(
    'Contacts',
-   Field('Contact ID', notnull = True, unique = True),
+   #Field('Contact ID', notnull = True, unique = True),
    Field('First Name'),
    Field('Last Name'),
    Field('Email', requires = IS_EMAIL()),
@@ -22,7 +22,7 @@ db.define_table(
 # This creates the Insurance Table
 db.define_table(
    'Insurance',
-   Field('Insurer id', notnull = True, unique = True), 
+   #Field('Insurer id', notnull = True, unique = True), 
    Field('Insurer Name', notnull = True),
    Field('Address'),
    Field('Phone Number', requires = IS_MATCH('[\d\-\(\) ]+')),
