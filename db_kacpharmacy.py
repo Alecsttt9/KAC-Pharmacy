@@ -24,7 +24,8 @@ db.define_table(
    Field ('Bin Number', requires = IS_MATCH('[\d\-\(\) ]+')), 
    Field('Phone Number', requires = IS_MATCH('[\d\-\(\) ]+')),
    Field('Primary Cardholder'),
-
+   )
+   
    db.define_table(
     'Allergy Profiles'
     Field('Status', notnull = True)
@@ -32,20 +33,21 @@ db.define_table(
     Field('Entry Date',type='datetime', default=datetime.datetime.now(), notnull = True)
     Field('Severity')
     Field('Raction')
+   )
 
 db.define_table(
    'Perscriptions',
-   Field('Rx Number', notnull = True) unique = True), format = '%(name)s'),
+   Field('Rx Number', notnull = True unique = True, format = '%(name)s'),
    Field('Brand Name', notnull = True),
-`  Field('Generic Name', notnull = True),
+   Field('Generic Name', notnull = True),
    Field('DAW', notnull = True),
    Field('NDC Number', notnull = True),
    Field('Quanty', notnull = True),
    Field('SIG', notnull = True),
    Field('Prescriber', notnull = True),
-`  Field('Refills', notnull = True),
+   Field('Refills', notnull = True),
    Field('Drug Schedule', 'refrence Schedule ID')
-
+)
 db.define_table(
    'Drug Schedules',
    #Field('ID', notnull = True, unique = True),
@@ -73,12 +75,12 @@ db.define_table(
 # This creates the Insurance Table
 
    
-)
+
 
 #contacts table should be renamed to 'Patients'
     #table needs to include 'Policy Number' , 'Bin Number', 'Cardholder Name' , 'DOB', 'Alergies'
 
-)
+
 
 
 
