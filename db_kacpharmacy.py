@@ -3,9 +3,9 @@
 # Connect to database
 db = DAL('sqlite://storage.sqlite')
 
-# This creates the Contacts Table
+# This creates the Patients Table
 db.define_table(
-   'Contacts',
+   'Patients',
    #Field('Contact ID', notnull = True, unique = True),
    Field('First Name'),
    Field('Last Name'),
