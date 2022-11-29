@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+# Connect to database
+db = DAL('sqlite://storage.sqlite')
+
 # This creates the Contacts Table
 db.define_table(
    'Contacts',
