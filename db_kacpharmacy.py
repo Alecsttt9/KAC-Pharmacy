@@ -61,7 +61,7 @@ db.define_table(
    Field('Last Name'),
    Field('DOB')
    Field('Phone Number', requires = IS_MATCH('[\d\-\(\) ]+')),
-   Field('Address 1'),
+   Field('Address 1', 'refrence States'),
    Field('Address 2'),
    Field('Prescriber', 'reference Prescribers'), # db.Prescribers
    Field('Insurer', 'reference Insurances'), # db.Insurance
