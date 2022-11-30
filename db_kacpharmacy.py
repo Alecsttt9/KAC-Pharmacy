@@ -3,12 +3,12 @@
 import datetime
 
 db.define_table(
-    'states',
+    'States',
     Field('name', notnull = True, unique = True),
     Field('abbreviation', notnull = True, unique = True),
     format = '%(name)s')
 
-# This creates the Contacts Table
+# This creates the Prescribers Table
 db.define_table(
    'Prescribers',
    Field('firstName',  notnull = True),
@@ -70,7 +70,7 @@ db.define_table(
    Field('lastName'),
    Field('DOB'),
    Field('phoneNumber', requires = IS_MATCH('[\d\-\(\) ]+')),
-   Field('Address1', 'reference states'),
+   Field('Address1', 'reference States'),
    Field('Address2'),
    Field('Prescriber', 'reference Prescribers'), # db.Prescribers
    Field('Insurer', 'reference Insurances'), # db.Insurance
