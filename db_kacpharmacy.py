@@ -58,6 +58,11 @@ db.define_table(
 )
 
 db.define_table(
+    'leadSource',
+    Field('leadSource', notnull = True, unique = True),
+    format = '%(leadSource)s')
+
+db.define_table(
    'Patients',
    #Field('Contact ID', notnull = True, unique = True),
    Field('firstName'),
@@ -70,8 +75,10 @@ db.define_table(
    Field('Insurer', 'reference Insurances'), # db.Insurance
    Field('Allergies', 'reference allergyProfiles'),
    Field('Prescriptions', 'reference Prescriptions'),
+   Field('leadSource', 'reference leadSource'),
    format = '%(name)s'  
 )
+
 
 # This creates the Insurance Table
 
