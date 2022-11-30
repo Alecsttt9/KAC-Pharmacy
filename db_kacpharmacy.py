@@ -1,21 +1,26 @@
 # -*- coding: utf-8 -*-
 
+
+db.define_table(
+    'states',
+    Field('name', notnull = True, unique = True),
+    Field('abbreviation', notnull = True, unique = True),
+    format = '%(name)s')
+
 # This creates the Contacts Table
 db.define_table(
    'Prescribers',
-   #Field('Prescriber ID', notnull = True, unique = True),
-   Field('firstName', 'reference company', notnull = True),
+   Field('firstName',  notnull = True),
    Field('lastName', notnull = True ),
    Field('deaNumber', unique = True, requires = IS_MATCH('[\d\-\(\) ]+')),
    Field('npiNumber', notnull = True, unique = True, requires = IS_MATCH('[\d\-\(\) ]+')),
-   Field('Address' notnull = True),
+   Field('Address', notnull = True),
    Field('phoneNumber', requires = IS_MATCH('[\d\-\(\) ]+')),
-   Filed('faxNumber', requires = IS_MATCH('[\d\-\(\) ]+')),
+   Field('faxNumber', requires = IS_MATCH('[\d\-\(\) ]+')),
    format = '%(name)s')
 
 db.define_table(
    'Insurances',
-   #Field('Insurer id', notnull = True, unique = True), 
    Field('companyName', notnull = True),
    Field('policyNumber', notnull = True),
    Field ('binNumber', requires = IS_MATCH('[\d\-\(\) ]+')), 
@@ -23,12 +28,20 @@ db.define_table(
    Field('primaryCardholder'))
    
 db.define_table(
-    'Allergy Profiles',
+    'allergyProfiles',
     Field('Status', notnull = True),
     Field('medicationName'),
-    Field('entryDate',type='datetime', default=datetime.datetime.now(), notnull = True),
+    #Field('entryDate', type='datetime', default=datetime.datetime.now(), notnull = True),
     Field('Severity'),
     Field('Reaction'))
+
+db.define_table(
+   'drugSchedules',
+   #Field('ID', notnull = True, unique = True),
+   Field('Schedule', notnull = True),
+   Field('Classification', notnull = True),
+   format = '%(name)s'
+)
 
 db.define_table(
    'Prescriptions',
@@ -41,14 +54,7 @@ db.define_table(
    Field('SIG', notnull = True),
    Field('Prescriber', notnull = True),
    Field('Refills', notnull = True),
-   Field('drugSchedule', 'refrence Schedule ID')
-)
-db.define_table(
-   'Drug Schedules',
-   #Field('ID', notnull = True, unique = True),
-   Field('Schedule', notnull = True),
-   Field('Classification', notnull = True)
-   format = '%(name)s'
+   Field('drugSchedule', 'reference drugSchedules')
 )
 
 db.define_table(
@@ -56,14 +62,14 @@ db.define_table(
    #Field('Contact ID', notnull = True, unique = True),
    Field('firstName'),
    Field('lastName'),
-   Field('DOB')
+   Field('DOB'),
    Field('phoneNumber', requires = IS_MATCH('[\d\-\(\) ]+')),
-   Field('Address1', 'refrence States'),
+   Field('Address1', 'reference states'),
    Field('Address2'),
    Field('Prescriber', 'reference Prescribers'), # db.Prescribers
    Field('Insurer', 'reference Insurances'), # db.Insurance
-   Field('Allergies', 'refrence Allergy Profiles')
-   Field('Prescriptions', 'refrence Perscriptions'),
+   Field('Allergies', 'reference allergyProfiles'),
+   Field('Prescriptions', 'reference Prescriptions'),
    format = '%(name)s'  
 )
 
@@ -74,12 +80,3 @@ db.define_table(
 
 #contacts table should be renamed to 'Patients'
     #table needs to include 'Policy Number' , 'Bin Number', 'Cardholder Name' , 'DOB', 'Alergies'
-
-
-
-
-
-
-
-
-
