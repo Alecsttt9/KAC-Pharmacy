@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import datetime
 
 db.define_table(
     'states',
@@ -31,7 +32,7 @@ db.define_table(
     'allergyProfiles',
     Field('Status', notnull = True),
     Field('medicationName'),
-    #Field('entryDate', type='datetime', default=datetime.datetime.now(), notnull = True),
+    Field('entryDate', type='datetime', default=datetime.datetime.now(), notnull = True),
     Field('Severity'),
     Field('Reaction'))
 
@@ -78,12 +79,3 @@ db.define_table(
    Field('leadSource', 'reference leadSource'),
    format = '%(name)s'  
 )
-
-
-# This creates the Insurance Table
-
-   
-
-
-#contacts table should be renamed to 'Patients'
-    #table needs to include 'Policy Number' , 'Bin Number', 'Cardholder Name' , 'DOB', 'Alergies'
