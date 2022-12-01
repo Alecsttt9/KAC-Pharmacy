@@ -6,7 +6,7 @@ db.define_table(
     'States',
     Field('name', notnull = True, unique = True),
     Field('abbreviation', notnull = True, unique = True),
-    format = '%(States)s')
+    format = '%(name)s')
 
 # This creates the Contacts Table
 db.define_table(
@@ -18,7 +18,7 @@ db.define_table(
    Field('Address', notnull = True),
    Field('phoneNumber', requires = IS_MATCH('[\d\-\(\) ]+')),
    Field('faxNumber', requires = IS_MATCH('[\d\-\(\) ]+')),
-   format = '%(Prescriber)s')
+   format = '%(lastName)s')
 
 db.define_table(
    'Insurances',
@@ -41,7 +41,7 @@ db.define_table(
    #Field('ID', notnull = True, unique = True),
    Field('Schedule', notnull = True),
    Field('Classification', notnull = True),
-   format = '%(drugSchedules)s'
+   format = '%(classification)s'
 )
 
 db.define_table(
@@ -77,5 +77,5 @@ db.define_table(
    Field('Allergies', 'reference allergyProfiles'),
    Field('Prescriptions', 'reference Prescriptions'),
    Field('leadSource', 'reference leadSource'),
-   format = '%(firstName)s'  
+   format = '%(lastName)s'  
 )
