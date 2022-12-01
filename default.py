@@ -44,7 +44,7 @@ def leadSource():
     grid = SQLFORM.grid(db.leadSource)
     return dict(grid=grid)
 
-@auth.requires_login()
+@auth.requires_login() 
 def Patients():
     grid = SQLFORM.grid(db.Patients)
     return dict(grid=grid)
