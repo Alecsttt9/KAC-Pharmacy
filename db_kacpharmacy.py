@@ -73,7 +73,7 @@ db.define_table(
    Field('Address1'),
    Field('Address2'),
    Field('City'),
-   Field('State', 'reference States'),
+   Field('stateName', 'reference States'),
    Field('zipCode'),
    Field('Prescriber', 'reference Prescribers'), # db.Prescribers
    Field('Insurer', 'reference Insurances'), # db.Insurance
