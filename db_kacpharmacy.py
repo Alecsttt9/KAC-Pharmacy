@@ -18,6 +18,7 @@ db.define_table(
    )
    db.define_table(
    'Insurances',
+<<<<<<< Updated upstream
    #Field('Insurer id', notnull = True, unique = True), 
    Field('Company Name', notnull = True),
    Field('Policy Number', notnull = True),
@@ -45,6 +46,52 @@ db.define_table(
    Field('Prescriber', notnull = True),
 `  Field('Refills', notnull = True),
    Field('Drug Schedule', 'refrence Drug Schedules')
+=======
+   Field('companyName', notnull = True),
+   Field('primaryCardholder')),
+   Field('policyNumber', notnull = True),
+   Field('binNumber', requires = IS_MATCH('[\d\-\(\) ]+')), 
+   Field('phoneNumber', requires = IS_MATCH('[\d\-\(\) ]+'))
+   
+   
+db.define_table(
+    'allergyProfiles',
+    Field('Status', notnull = True),
+    Field('medicationName', notnull = True),
+    Field('entryDate', type='datetime', default=datetime.datetime.now(), notnull = True),
+    Field('Severity'),
+    Field('Reaction'))
+
+db.define_table(
+   'Medications'
+   Field('ndcNumber', notnull = True)
+   Field('brandName', notnull = True),
+   Field('genericName')
+   Field('quanity')
+   Field('drugSchedule', 'reference drugSchedules')
+)
+db.define_table(
+   'drugSchedules',
+   #Field('ID', notnull = True, unique = True),
+   Field('Schedule', notnull = True),
+   Field('Classification', notnull = True),
+   format = '%(classification)s'
+)
+
+db.define_table(
+   'Prescriptions',
+   Field('rxNumber', notnull = True, unique = True, format = '%(name)s'),
+   Field('brandName', notnull = True),
+   Field('genericName', notnull = True),
+   Field('DAW', notnull = True),
+   Field('ndcNumber', notnull = True),
+    Field('SIG', notnull = True),
+   Field('Quantity', notnull = True),
+   Field('Prescriber', 'refrence Prescribers' notnull = True),
+   Field('Refills')
+   
+)
+>>>>>>> Stashed changes
 
 db.define_table(
    'Drug Schedules',
@@ -75,6 +122,7 @@ db.define_table(
    
 )
 
+<<<<<<< Updated upstream
 #contacts table should be renamed to 'Patients'
     #table needs to include 'Policy Number' , 'Bin Number', 'Cardholder Name' , 'DOB', 'Alergies'
 
@@ -86,3 +134,30 @@ db.define_table(
 
 
 
+=======
+db.define_table(
+   'Users'
+   Field('employeeID', notnull = True),
+   Field('fName', notnull = True),
+   Field('lName', notnull = True),
+   Field('email'),
+   Field('title', notnull = True),
+   Field('credentials'),
+   Field('userName', notnull = True)
+   Field('password')
+)
+
+db.define_table(
+   'fillStations'
+   Field('fName', notnull = True),
+   Field('lName', notnull = True),
+   Field('rxNumber', 'refrence Perscriptions'),
+   Field('ndcNumber'),
+   Field('brandName', notnull = True),
+   Field('genericName'),
+   Field('SIG')
+   Field('Prescriber', 'refrence Prescribers'),
+   Field('Refill')
+   Field('DAW')
+)
+>>>>>>> Stashed changes
