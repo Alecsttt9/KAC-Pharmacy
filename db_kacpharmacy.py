@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import datetime
-
+#test comment
 db.define_table(
     'States',
     Field('name', notnull = True, unique = True),
