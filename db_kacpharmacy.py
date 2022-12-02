@@ -23,11 +23,11 @@ db.define_table(
 db.define_table(
    'Insurances',
    #Field('Insurer id', notnull = True, unique = True), 
-   Field('Company Name', notnull = True),
-   Field('Policy Number', notnull = True),
-   Field ('Bin Number', requires = IS_MATCH('[\d\-\(\) ]+')), 
-   Field('Phone Number', requires = IS_MATCH('[\d\-\(\) ]+')),
-   Field('Primary Cardholder', requires = IS_MATCH('[\d\-\(\) ]+')),
+   Field('companyName', notnull = True),
+   Field('policyNumber', notnull = True),
+   Field ('binNumber', requires = IS_MATCH('[\d\-\(\) ]+')), 
+   Field('phoneNumber', requires = IS_MATCH('[\d\-\(\) ]+')),
+   Field('primaryCardholder', requires = IS_MATCH('[\d\-\(\) ]+')),
    )
 
 db.define_table(
