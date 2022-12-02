@@ -34,7 +34,7 @@ db.define_table(
     'allergyProfiles',
     Field('Status', notnull = True),
     Field('medicationName'),
-    Field('entryDate', type='datetime', default=datetime.datetime.now(), notnull = True),
+    Field('entryDate', type='datetime', default=datetime.datetime.now()),
     Field('Severity'),
     Field('Reaction'))
 
@@ -55,7 +55,7 @@ db.define_table(
    Field('ndcNumber', notnull = True),
    Field('Quantity', notnull = True),
    Field('SIG', notnull = True),
-   Field('Prescriber', 'reference Prescribers', notnull = True),
+   Field('Prescriber', 'reference Prescribers'),
    Field('Refills', notnull = True),
    Field('drugSchedule', 'reference drugSchedules'),
    format = '%(rxNumber)s'
@@ -69,11 +69,15 @@ db.define_table(
    Field('quanity'),
    Field('drugSchedule', 'reference drugSchedules')
 )
+db.define_table(
+    'leadSource',
+    Field('leadSource', notnull = True, unique = True),
+    format = '%(leadSource)s')
 
 db.define_table(
    'Patients',
    #Field('Contact ID', notnull = True, unique = True),
-   Field('firstName'),
+   Field('firstName', notnull = True),
    Field('lastName'),
    Field('DOB'),
    Field('phoneNumber', requires = IS_MATCH('[\d\-\(\) ]+')),
@@ -93,8 +97,8 @@ db.define_table(
 db.define_table(
    'Users',
    Field('employeeID', notnull = True),
-   Field('fName', notnull = True),
-   Field('lName', notnull = True),
+   Field('firstName', notnull = True),
+   Field('lastName', notnull = True),
    Field('email'),
    Field('title', notnull = True),
    Field('credentials'),
@@ -104,14 +108,14 @@ db.define_table(
 
 db.define_table(
    'fillStations',
-   Field('fName', notnull = True),
-   Field('lName', notnull = True),
-   Field('rxNumber', 'refrence Perscriptions'),
+   Field('firstName', notnull = True),
+   Field('lastName', notnull = True),
+   Field('rxNumber', 'reference Prescriptions'),
    Field('ndcNumber'),
-   Field('brandName', notnull = True),
+   Field('brandName'),
    Field('genericName'),
    Field('SIG'),
-   Field('Prescriber', 'refrence Prescribers'),
+   Field('Prescriber', 'reference Prescribers'),
    Field('Refill'),
    Field('DAW')
 )
