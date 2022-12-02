@@ -39,6 +39,14 @@ db.define_table(
     Field('Reaction'))
 
 db.define_table(
+   'drugSchedules',
+   #Field('ID', notnull = True, unique = True),
+   Field('Schedule', notnull = True),
+   Field('Classification', notnull = True),
+   format = '%(classification)s'
+)
+
+db.define_table(
    'Prescriptions',
    Field('rxNumber', notnull = True, unique = True),
    Field('brandName', notnull = True),
@@ -60,13 +68,6 @@ db.define_table(
    Field('genericName'),
    Field('quanity'),
    Field('drugSchedule', 'reference drugSchedules')
-)
-db.define_table(
-   'drugSchedules',
-   #Field('ID', notnull = True, unique = True),
-   Field('Schedule', notnull = True),
-   Field('Classification', notnull = True),
-   format = '%(classification)s'
 )
 
 db.define_table(
