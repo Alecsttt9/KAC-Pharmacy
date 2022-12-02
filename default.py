@@ -49,6 +49,21 @@ def Patients():
     grid = SQLFORM.grid(db.Patients)
     return dict(grid=grid)
 
+@auth.requires_login() 
+def Medications():
+    grid = SQLFORM.grid(db.Medications)
+    return dict(grid=grid)
+
+@auth.requires_login() 
+def Users():
+    grid = SQLFORM.grid(db.Users)
+    return dict(grid=grid)
+
+@auth.requires_login() 
+def fillStations():
+    grid = SQLFORM.grid(db.fillStations)
+    return dict(grid=grid)
+
 
 # ---- API (example) -----
 @auth.requires_login()
