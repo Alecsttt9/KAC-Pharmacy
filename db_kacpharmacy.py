@@ -81,8 +81,8 @@ db.define_table(
    Field('lastName'),
    Field('DOB'),
    Field('phoneNumber', requires = IS_MATCH('[\d\-\(\) ]+')),
-   Field('Address1'),
-   Field('Address2'),
+   Field('Address_1'),
+   Field('Address_2'),
    Field('City'),
    Field('stateName', 'reference States'),
    Field('zipCode'),
@@ -90,8 +90,8 @@ db.define_table(
    Field('Insurer', 'reference Insurances'), # db.Insurance
    Field('Allergies', 'reference allergyProfiles'),
    Field('Prescriptions', 'reference Prescriptions'),
-   Field('leadSource', 'reference leadSource'),
-   format = '%(lastName)s'  
+   Field('leadSource'),
+   format = '%(lastName)s'
 )
 
 db.define_table(
