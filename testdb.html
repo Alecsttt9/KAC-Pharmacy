@@ -1,0 +1,13 @@
+{{extend 'layout.html'}}
+<h1>This is the testdb.html</h1>
+<table>
+    <tr>
+        <th width="10%">Name</th><th width="10%">Insurer</th><th width="20%">Phone Number</th>
+    </tr>
+{{rows = db(db.Patients.lastName != None).select()}}
+{{for row in rows:}}
+   <tr>
+       <td>{{=row.lastName}}</td><td>{{=row.Insurer}}</td><td>{{=row.phoneNumber}}</td>
+   </tr>
+{{pass}}
+</table>
