@@ -64,6 +64,11 @@ def fillStations():
     grid = SQLFORM.grid(db.fillStations)
     return dict(grid=grid)
 
+def testdb():
+    rows = db( db.Patients.lastName != None).select()
+    response.view = "testdb.html";
+    return locals();
+
 
 # ---- API (example) -----
 @auth.requires_login()
