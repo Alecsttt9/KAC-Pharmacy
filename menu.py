@@ -46,8 +46,7 @@ if not configuration.get('app.production'):
             (T('About'), False, URL(
                 'admin', 'default', 'about/' + _app)),
         ]),
-        (T('Patients'), False, URL('default', 'patient lookup'), []),
-        (T('Prescribers'), False, URL('default', 'prescriber lookup'), []),
-        (T('Medications'), False, URL('default', 'medication lookup'), [])
+        (T('Patients'), False, URL('default', 'Patients'), []),
+        (T('Prescribers'), False, URL('default', 'Prescribers'), []),
+        (T('Medications'), False, URL('default', 'Medications'), [])
     ]
-
