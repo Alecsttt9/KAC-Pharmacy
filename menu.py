@@ -51,3 +51,4 @@ if not configuration.get('app.production'):
         (T('Medications'), False, URL('default', 'medication lookup'), [])
     ]
 
+       
