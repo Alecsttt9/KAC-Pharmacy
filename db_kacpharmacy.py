@@ -4,7 +4,7 @@ import datetime
 
 db.define_table(
     'States',
-    Field('name', unique = True),
+    Field('stateName', unique = True),
     Field('abbreviation', unique = True),
     format = '%(name)s')
 
