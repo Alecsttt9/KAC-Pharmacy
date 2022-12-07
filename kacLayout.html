@@ -154,6 +154,12 @@ body {
     </div>
   </div>
 </nav>
+<!-- MAIN CONTENT HERE -->
+<!-- Begin page content -->
+<div class="container-fluid main-container">
+      {{include}}
+      {{=response.toolbar() if response.show_toolbar else ''}}
+</div>
 
 <!-- Footer -->
 <footer class="container-fluid bg-3 text-center">
@@ -163,4 +169,3 @@ body {
 
 </body>
 </html>
-
