@@ -6,7 +6,7 @@ db.define_table(
     'States',
     Field('stateName', unique = True),
     Field('abbreviation', unique = True),
-    format = '%(name)s')
+    format = '%(stateName)s')
 
 # This creates the Prescribers Table
 db.define_table(
