@@ -43,7 +43,7 @@ db.define_table(
    #Field('ID', notnull = True, unique = True),
    Field('Schedule'),
    Field('Classification'),
-   format = '%(classification)s'
+   format = '%(Classification)s'
 )
 
 db.define_table(
