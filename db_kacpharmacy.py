@@ -4,8 +4,8 @@ import datetime
 
 db.define_table(
     'States',
-    Field('stateName', unique = True),
-    Field('abbreviation', unique = True),
+    Field('stateName'),
+    Field('abbreviation'),
     format = '%(stateName)s')
 
 # This creates the Prescribers Table
@@ -13,11 +13,11 @@ db.define_table(
    'Prescribers',
    Field('firstName'),
    Field('lastName'),
-   Field('deaNumber', unique = True, requires = IS_MATCH('[\d\-\(\) ]+')),
-   Field('npiNumber', unique = True, requires = IS_MATCH('[\d\-\(\) ]+')),
+   Field('deaNumber'),
+   Field('npiNumber'),
    Field('Address'),
-   Field('phoneNumber', requires = IS_MATCH('[\d\-\(\) ]+')),
-   Field('faxNumber', requires = IS_MATCH('[\d\-\(\) ]+')),
+   Field('phoneNumber'),
+   Field('faxNumber'),
    format = '%(lastName)s')
 
 db.define_table(
@@ -25,9 +25,9 @@ db.define_table(
    #Field('Insurer id', notnull = True, unique = True), 
    Field('companyName'),
    Field('policyNumber'),
-   Field ('binNumber', requires = IS_MATCH('[\d\-\(\) ]+')), 
-   Field('phoneNumber', requires = IS_MATCH('[\d\-\(\) ]+')),
-   Field('primaryCardholder', requires = IS_MATCH('[\d\-\(\) ]+')),
+   Field ('binNumber'), 
+   Field('phoneNumber'),
+   Field('primaryCardholder')
    )
 
 db.define_table(
@@ -48,7 +48,7 @@ db.define_table(
 
 db.define_table(
    'Prescriptions',
-   Field('rxNumber', unique = True),
+   Field('rxNumber'),
    Field('brandName'),
    Field('genericName'),
    Field('DAW'),
@@ -71,7 +71,8 @@ db.define_table(
 )
 db.define_table(
     'leadSource',
-    Field('leadSource', unique = True),
+    Field('leadSource'),
+    Field('leadSource'),
     format = '%(leadSource)s')
 
 db.define_table(
@@ -80,7 +81,7 @@ db.define_table(
    Field('firstName'),
    Field('lastName'),
    Field('DOB'),
-   Field('phoneNumber', requires = IS_MATCH('[\d\-\(\) ]+')),
+   Field('phoneNumber'),
    Field('Address_1'),
    Field('Address_2'),
    Field('City'),
