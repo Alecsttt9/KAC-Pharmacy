@@ -69,6 +69,54 @@ def testdb():
     response.view = "testdb.html";
     return locals();
 
+def importStates():
+    import csv   #for python to understand you're using csv file
+    import sys
+    import os
+    lines = 0
+    try:
+        fp_in = open(os.path.join(request.folder, 'static', "MockStateTable.csv"),"r")
+        reader =  csv.reader(fp_in)
+        for line in reader:         # each line is read into a list
+            stateName = line[0]
+            abbreviation = line[1]           
+            db.States.update_or_insert(stateName=stateName, abbreviation=abbreviation)
+            lines += 1
+        session.lines = lines
+        response.flash = str(lines) + " lines read"
+    except Exception  as e:
+        response.flash = "ERROR: " + str(e)
+    #redirect(URL(r=request, f='registrationsb'))
+    response.view = "import_results.html"
+    return dict()
+
+def importPrescribers():
+    import csv   #for python to understand you're using csv file
+    import sys
+    import os
+    lines = 0
+    try:
+        fp_in = open(os.path.join(request.folder, 'static', "MockPrescribersTable.csv"),"r")
+        reader =  csv.reader(fp_in)
+        for line in reader:         # each line is read into a list
+            firstName = line[0]
+            lastName = line [1]
+            deaNumber = line[2]
+            npiNumber = line[3]
+            Address = line[4]
+            phoneNumber = line[5]
+            faxNumber = line[6]
+            db.Prescribers.update_or_insert(firstName=firstName, lastName=lastName, deaNumber=deaNumber, Address=Address, 
+			phoneNumber=phoneNumber, faxNumber=faxNumber)
+            lines += 1
+        session.lines = lines
+        response.flash = str(lines) + " lines read"
+    except Exception  as e:
+        response.flash = "ERROR: " + str(e)
+    #redirect(URL(r=request, f='registrationsb'))
+    response.view = "import_results.html"
+    return dict()
+
 
 # ---- API (example) -----
 @auth.requires_login()
