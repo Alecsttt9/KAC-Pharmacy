@@ -9,7 +9,7 @@ from http.client import responses
 
 
 responses.menu = [
-    (T('Home'), False, URL('default', 'index'), [])
+        (T('Home'), False, URL('default', 'index'), [])
 ]
 
 # ----------------------------------------------------------------------------------------------------------------------
