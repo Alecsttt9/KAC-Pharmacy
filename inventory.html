@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Inventory</title>
+  <meta charset="utf-8">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/78fc201897.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<script>
+  $('.pagination-inner a').on('click', function() {
+		$(this).siblings().removeClass('pagination-active');
+		$(this).addClass('pagination-active');
+})
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+<style> 
+h1 {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #553739;
+    text-transform: uppercase;
+  }
+.container-fluid {
+  padding: 60px 50px;
+}
+.margin {
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+  .bg-3 { 
+    background-color: #553739; /* Dark Liver Horse */
+    color: #F1b498;
+  }
+  .bg-4 { 
+    background-color: #955e42; /* Brown Sugar */
+    color: #F1b498
+  }
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 15px;
+    letter-spacing: 5px;
+    background-color:  #553739;
+    color: #EC9070;
+  }
+.navbar .li {
+  border: 1px solid #6f1a07;
+  background-color: #4d1e10;
+  color: #2FC284;
+}		
+.navbar-link{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1.42857;
+    margin-right: 5px;
+    padding: 10px 17px;
+    position: relative;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    color: #2FC284;
+    cursor: pointer;
+}
+  .btn {
+  padding: 5px;
+  background-color: #C5A49B;
+    color: #57393B;
+  border-color: #2FC284;
+  border-radius: 3px;
+  transition: .2s;
+  font-size: x-large;
+}
+.btn:hover > a {
+ color: #57393B;
+}
+  table {
+  margin: 50px;
+  color:  #4A2913;
+  background-color: #ecded5; 
+}
+thead{
+  text-align: center;
+    font-size:large;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    background-color: #C5A49B;
+    color: #57393B;
+}
+th {
+    text-align: center;
+    font-size:large;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    background-color: #C5A49B;
+    color: #57393B;
+}
+td {                                      padding:10px;                  
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: large;
+}     		
+.pag-link {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 5px;
+}
+.pag-link.disabled > span,
+.pag-link.current > span,
+.pag-link > a{
+    display: block;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1.42857;
+    margin-right: 5px;
+    padding: 10px 17px;
+    position: relative;
+    text-decoration: none;
+    border: none;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.pag-link:active > a,
+.pag-link:hover > a,
+.pag-link:focus > a,
+.pag-link.current > span{
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+.pag-link > a{
+    background-color: #F1b498;
+    color: #553739;
+    cursor: pointer;
+}
+.pag-link.disabled > span,
+.pag-link.current > span{
+    background-color: #6f1a07;
+    color: #2FC284;
+    cursor: inherit;
+}
+.pag-link:active > a,
+.pag-link:hover > a,
+.pag-link:focus > a {
+    background-color: #2FC284;
+    border-color: #4d1e10;
+    color: #ecded5;
+}
+
+  </style>
+</head>
+<body>
+<!-- Navbar -->  
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a style = "color: #2FC284" class = "navbar-link" href="homepagelayout.html">
+        <span class="glyphicon glyphicon-home"></span>  Home
+      </a>
+      <a style = "color: #2FC284" class = "navbar-link" href ="userprofile.html">
+        <i class="fa-regular fa-id-card"></i>  User Profile
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a style = "color: #F1b498" class = "navbar-link" href="patientlookup.html"><i class="fa-solid fa-hospital-user"></i>Patient Lookup</a></li>
+        <li><a style = "color: #F1b498" class = "navbar-link" href="prescriberlu.html"><i class="fa-solid fa-user-doctor"></i>Prescriber Lookup</a></li>
+        <li><a style = "color: #F1b498" class = "navbar-link" href="inventory.html"><i class="fa-solid fa-warehouse"></i>Inventory</a></li>
+      </ul>
+    </div>
+  </div>
+</nav> 
+</div>
+<div class="container-fluid bg-4">
+    <div class="table-responsive">
+      <table class= "table table-hover table-bordered">
+        <thead>
+          <tr>
+            <h1 class="text-center" style = "color: #F1b498"><i class="fa-solid fa-warehouse"></i>  Inventory</h1> 
+          </tr>
+          <tr>
+            <th>Update</th> 
+            <th>NDC Number</th>
+            <th>Brand Name</th>
+            <th>Generic Name</th>
+            <th>On-Hand</th>
+            <th>On Order</th>                
+          </tr>
+          </thead>   
+              <tbody>
+                <tr> 
+                  <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
+                  <td>100</td>
+                  <td>100</td>               
+                  <td>Cymbalta</td>
+                  <td>100</td>
+                  <td>50</td> 
+                </tr>
+                <tr> 
+                  <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>  
+                  <td>100</td>
+                  <td>100</td>              
+                  <td>Gabapentin</td>
+                  <td>560</td>
+                  <td>0</td>          
+                </tr>
+                <tr> 
+                  <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
+                  <td>100</td>
+                  <td>100</td>              
+                  <td>Lyrica</td>
+                  <td>150</td>
+                  <td>30</td>             
+                </tr>   
+              </tbody>
+            </table>
+          </div>      
+          <div class="container">
+	        <div class="row">
+		        <ul class="pagination-custom text-center" style = "padding-top:50px">
+	            <li class="pag-link"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+              <li class="pag-link current"><span>1</span></li>
+	            <li class="pag-link"><a href="#">2</a></li>
+	            <li class="pag-link"><a href="#">3</a></li>
+	            <li class="pag-link"><a href="#">4</a></li>
+	            <li class="pag-link"><a href="#">5</a></li>
+	            <li class="pag-link"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body> 
+  <!--footer-->
+  <footer class="container-fluid bg-3 text-center">
+    <p>KAC Pharmacy &copy; 2022 </p> 
+    <p><a style = "color:#2FC284" href="https://www.tri-c.edu/programs/information-technology/programming-and-development/clevelandcodes.html">Cleveland Codes Software Developers Academy &copy; 2022</a></p> 
+  </footer> 
+
+   

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Patient Lookup</title>
+  <title>Prescriber Lookup</title>
   <meta charset="utf-8">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -236,35 +236,30 @@ td {                                      padding:10px;
     </div>
   </div>
 </nav> 
-            <div class="container-fluid bg-4">
-                  
-                    <div class="table-responsive">
-                      <table class= "table table-hover table-bordered">
-                    <tr>
-                      <h1 class="text-center" style = "color: #F1b498"><i class="fa-solid fa-warehouse"></i>  patients</h1> 
-                    </tr>
-            <hr>
-            <tr>
-              <input id="myInput" type="text" name = "search" placeholder="Search Patient Profiles..">
-            </tr>
+<div class="container-fluid bg-4">
+  <div class="table-responsive">
+    <table class= "table table-hover table-bordered">
+      <tr>
+        <h1 class="text-center" style = "color: #F1b498"><i class="fa-solid fa-user-doctor"></i> Prescribers</h1> 
+      </tr>
+     <hr>
+      <tr>
+        <input id="myInput" type="text" name = "search" placeholder="Search Prescriber Profiles..">
+      </tr>
             <thead>
-              <tr>
-                <th>Modify Profile</th>
-                <th>Name</th>
-                <th>Gender</th>
-                <th>DOB</th>
-                <th>Street Address</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Zip Code</th>
-                <th>E-mail address</th>
-                <th>Phone Number</th>
-                <th>Insurance</th>
-                <th>Allergies</th>
-                <th>Prescriptions</th>
-                <th>Auto Fill</th>
-                <th>Lead Source</th>
-              </tr>
+              <thead>
+                <tr>
+                    <th>Modify Profile</th>
+                    <th>Name</th>
+                    <th>DEA Number</th>
+                    <th>NPI Number</th>
+                    <th>Street Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip Code</th>
+                    <th>Phone Number</th>
+                    <th>Fax Number</th>
+                  </tr>
             </thead>
             <tbody id="myTable">
             <tr>
@@ -278,225 +273,191 @@ td {                                      padding:10px;
               <td>25436</td>
               <td>wynett0@jigsy.com</td>
               <td>(886)845-1778</td>
-              <td>Torp-Fisher</td>
-              <td>ZINC OXIDE</td>
-              <td>lasix</td> 
-              <td>Yes</td>
-              <td>E-mail</td>
             </tr>
             <tr>
               <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
-              <td>Zarla Poundsford</td>
+              <td>Sacha Wynett</td>
               <td>Female</td>
-              <td>02-05-1945</td>
-              <td>62901 Northview Pass</td>
-              <td>Lyubar</td>
-              <td>PA</td>
+              <td>01-01-1977</td>
+              <td>45 Shopko Avenue </td>
+              <td>Helsingborgs</td>
+              <td>MI</td>
               <td>25436</td>
-              <td>zpoundsford1@buzzfeed.com</td>
-              <td>(953)564-0347</td>
-              <td>Hilpert-Blick</td>
-              <td>Doxazosin Mesylate</td>
-              <td>Eliquis</td> 
-              <td>No</td>
-              <td>Social Media</td>
+              <td>wynett0@jigsy.com</td>
+              <td>(886)845-1778</td>
             </tr>
             <tr>
               <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
-              <td>Colene Pocklington</td>
+              <td>Sacha Wynett</td>
               <td>Female</td>
-              <td>08-03-1982</td>
-              <td>9418 Bartelt Trail</td>
-              <td>Alue Glumpang</td>
-              <td>OK</td>
-              <td>25478</td>
-              <td>cpocklington2@t-online.de</td>
-              <td>(373)-802-5682</td>
-              <td>Homeopathic Liquid</td>
-              <td>ReHydration</td>
-              <td>Adderal</td> 
-              <td>Yes</td>
-              <td>Social Media</td>
+              <td>01-01-1977</td>
+              <td>45 Shopko Avenue </td>
+              <td>Helsingborgs</td>
+              <td>MI</td>
+              <td>25436</td>
+              <td>wynett0@jigsy.com</td>
+              <td>(886)845-1778</td>
             </tr>
             <tr>
               <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
-              <td>Louise Kimmitt</td>
-              <td>Male</td>
-              <td>09-06-2002</td>
-              <td>86791 Fairview Way</td>
-              <td>Binzhou</td>
-              <td>AL</td>
-              <td>75869</td>
-              <td>ckimmitt3@naver.com</td>
-              <td>(533)-471-8369</td>
-              <td>Schaefer-Muller</td>
-              <td>Penicillin</td>
-              <td>Vitamin d3</td> 
-              <td>No</td>
-              <td>Flyer</td>
-            </tr>
-            <tr>
-              <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
-              <td>Ker Crinkley</td>
-              <td>Male</td>
-              <td>10-06-2012</td>
-              <td>861 Spohn Hill</td>
-              <td>Blon</td>
-              <td>OH</td>
-              <td>42536</td>
-              <td>ebraunston4@youtu.be</td>
-              <td>(489)-802-7616</td>
-              <td>Nikolaus LLC</td>
-              <td>Heparin Sodium</td>
-              <td>Jentadueto XR</td> 
-              <td>Yes</td>
-              <td>In Person</td>
-            </tr>
-            <tr>
-              <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
-              <td>Elvin Braunston</td>
-              <td>Male</td>
-              <td>10-06-2012</td>
-              <td>861 Spohn Hill</td>
-              <td>Blon</td>
-              <td>OH</td>
-              <td>42536</td>
-              <td>ebraunston4@youtu.be</td>
-              <td>(489)-802-7616</td>
-              <td>Nikolaus LLC</td>
-              <td>Heparin Sodium</td>
-              <td>Jentadueto XR</td> 
-              <td>Yes</td>
-              <td>In Person</td>
-            </tr>
-            <tr>
-              <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
-              <td>Elyn Huetson</td>
+              <td>Sacha Wynett</td>
               <td>Female</td>
-              <td>11-07-2001</td>
-              <td>369 Maryland Point</td>
-              <td>Cincinnati</td>
-              <td>OH</td>
-              <td>45228</td>
-              <td>hhonack0@sogou.com</td>
-              <td>(513) 463-3147</td>
-              <td>Nikolaus LLC</td>
-              <td>Heparin Sodium</td>
-              <td>Jentadueto XR</td> 
-              <td>Yes</td>
-              <td>In Person</td>
+              <td>01-01-1977</td>
+              <td>45 Shopko Avenue </td>
+              <td>Helsingborgs</td>
+              <td>MI</td>
+              <td>25436</td>
+              <td>wynett0@jigsy.com</td>
+              <td>(886)845-1778</td>
             </tr>
             <tr>
               <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
-              <td>Benedikta Deniset</td>
+              <td>Sacha Wynett</td>
               <td>Female</td>
-              <td>11-07-2001</td>
-              <td>4 Lakewood Gardens Road</td>
-              <td>Virginia Beach</td>
-              <td>VA</td>
-              <td>23459</td>
-              <td>bdeniset1@blogspot.com</td>
-              <td>(757)-860-0116</td>
-              <td>Nikolaus LLC</td>
-              <td>Heparin Sodium</td>
-              <td>Jentadueto XR</td> 
-              <td>Yes</td>
-              <td>In Person</td>
+              <td>01-01-1977</td>
+              <td>45 Shopko Avenue </td>
+              <td>Helsingborgs</td>
+              <td>MI</td>
+              <td>25436</td>
+              <td>wynett0@jigsy.com</td>
+              <td>(886)845-1778</td>
             </tr>
             <tr>
               <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
-              <td>Sharleen Stango</td>
+              <td>Sacha Wynett</td>
               <td>Female</td>
-              <td>05-05-1979</td>
-              <td>00 Grayhawk Drive</td>
-              <td>Santa Barbara</td>
-              <td>CA</td>
-              <td>93111</td>
-              <td>cbulluck2@berkeley.edu</td>
-              <td>(702)- 817-4976</td>
-              <td>Nikolaus LLC</td>
-              <td>Heparin Sodium</td>
-              <td>Jentadueto XR</td> 
-              <td>Yes</td>
-              <td>In Person</td>
+              <td>01-01-1977</td>
+              <td>45 Shopko Avenue </td>
+              <td>Helsingborgs</td>
+              <td>MI</td>
+              <td>25436</td>
+              <td>wynett0@jigsy.com</td>
+              <td>(886)845-1778</td>
             </tr>
             <tr>
               <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
-              <td>Karly Gouch</td>
+              <td>Sacha Wynett</td>
               <td>Female</td>
-              <td>05-03-1976</td>
-              <td>00 Grayhawk Drive</td>
-              <td>Santa Barbara</td>
-              <td>CA</td>
-              <td>93111</td>
-              <td>cbulluck2@berkeley.edu</td>
-              <td>(702)- 817-4976</td>
-              <td>Nikolaus LLC</td>
-              <td>Heparin Sodium</td>
-              <td>Jentadueto XR</td> 
-              <td>Yes</td>
-              <td>In Person</td>
+              <td>01-01-1977</td>
+              <td>45 Shopko Avenue </td>
+              <td>Helsingborgs</td>
+              <td>MI</td>
+              <td>25436</td>
+              <td>wynett0@jigsy.com</td>
+              <td>(886)845-1778</td>
             </tr>
             <tr>
               <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
-              <td>Kathe Van der Kruijs</td>
+              <td>Sacha Wynett</td>
               <td>Female</td>
-              <td>05-03-1976</td>
-              <td>5672 South Hill</td>
-              <td>	Rochester</td>
-              <td>NY</td>
-              <td>14624</td>
-              <td>kvan6@nationalgeographic.com</td>
-              <td>(585)- 146-7172</td>
-              <td>Nikolaus LLC</td>
-              <td>Heparin Sodium</td>
-              <td>Jentadueto XR</td> 
-              <td>Yes</td>
-              <td>In Person</td>
-              </tr>
-              <tr>
-                <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
-                  <td>John Lilki</td>
-                  <td>September 14, 2013</td>
-                  <td>jhlilk22@yahoo.com</td>
-                  <td>No</td>
-              </tr>
-              <tr>
-                <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
-                  <td>John Lilki</td>
-                  <td>September 14, 2013</td>
-                  <td>jhlilk22@yahoo.com</td>
-                  <td>No</td>
-              </tr>
-              <tr>  
-                <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>               
-                  <td>John Lilki</td>
-                  <td>September 14, 2013</td>
-                  <td>jhlilk22@yahoo.com</td>
-                  <td>No</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>  
-        <div class="container">
-	        <div class="row">
-		        <ul class="pagination-custom text-center" style = "padding-top:50px">
-	            <li class="pag-link"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
-              <li class="pag-link current"><span>1</span></li>
-	            <li class="pag-link"><a href="#">2</a></li>
-	            <li class="pag-link"><a href="#">3</a></li>
-	            <li class="pag-link"><a href="#">4</a></li>
-	            <li class="pag-link"><a href="#">5</a></li>
-	            <li class="pag-link"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-            </ul>
-          </div>
+              <td>01-01-1977</td>
+              <td>45 Shopko Avenue </td>
+              <td>Helsingborgs</td>
+              <td>MI</td>
+              <td>25436</td>
+              <td>wynett0@jigsy.com</td>
+              <td>(886)845-1778</td>
+            </tr>
+            <tr>
+              <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
+              <td>Sacha Wynett</td>
+              <td>Female</td>
+              <td>01-01-1977</td>
+              <td>45 Shopko Avenue </td>
+              <td>Helsingborgs</td>
+              <td>MI</td>
+              <td>25436</td>
+              <td>wynett0@jigsy.com</td>
+              <td>(886)845-1778</td>
+            </tr>
+            <tr>
+              <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
+              <td>Sacha Wynett</td>
+              <td>Female</td>
+              <td>01-01-1977</td>
+              <td>45 Shopko Avenue </td>
+              <td>Helsingborgs</td>
+              <td>MI</td>
+              <td>25436</td>
+              <td>wynett0@jigsy.com</td>
+              <td>(886)845-1778</td>
+            </tr>
+            <tr>
+              <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
+              <td>Sacha Wynett</td>
+              <td>Female</td>
+              <td>01-01-1977</td>
+              <td>45 Shopko Avenue </td>
+              <td>Helsingborgs</td>
+              <td>MI</td>
+              <td>25436</td>
+              <td>wynett0@jigsy.com</td>
+              <td>(886)845-1778</td>
+            </tr>
+            <tr>
+              <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
+              <td>Sacha Wynett</td>
+              <td>Female</td>
+              <td>01-01-1977</td>
+              <td>45 Shopko Avenue </td>
+              <td>Helsingborgs</td>
+              <td>MI</td>
+              <td>25436</td>
+              <td>wynett0@jigsy.com</td>
+              <td>(886)845-1778</td>
+            </tr>
+            <tr>
+              <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
+              <td>Sacha Wynett</td>
+              <td>Female</td>
+              <td>01-01-1977</td>
+              <td>45 Shopko Avenue </td>
+              <td>Helsingborgs</td>
+              <td>MI</td>
+              <td>25436</td>
+              <td>wynett0@jigsy.com</td>
+              <td>(886)845-1778</td>
+            </tr>
+            <tr>
+              <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
+              <td>Sacha Wynett</td>
+              <td>Female</td>
+              <td>01-01-1977</td>
+              <td>45 Shopko Avenue </td>
+              <td>Helsingborgs</td>
+              <td>MI</td>
+              <td>25436</td>
+              <td>wynett0@jigsy.com</td>
+              <td>(886)845-1778</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>  
+      <div class="container">
+	      <div class="row">
+		      <ul class="pagination-custom text-center" style = "padding-top:50px">
+	          <li class="pag-link"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+            <li class="pag-link current"><span>1</span></li>
+	          <li class="pag-link"><a href="#">2</a></li>
+	          <li class="pag-link"><a href="#">3</a></li>
+	          <li class="pag-link"><a href="#">4</a></li>
+	          <li class="pag-link"><a href="#">5</a></li>
+	          <li class="pag-link"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
+</div>
 </body> 
 <!--footer-->
 <footer class="container-fluid bg-3 text-center">
   <p>KAC Pharmacy &copy; 2022 </p> 
   <p><a style = "color:#2FC284" href="https://www.tri-c.edu/programs/information-technology/programming-and-development/clevelandcodes.html">Cleveland Codes Software Developers Academy &copy; 2022</a></p> 
 </footer>  
+
+  
+  
+     
+     
+         
