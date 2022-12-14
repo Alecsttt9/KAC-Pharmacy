@@ -253,7 +253,7 @@ def importUsers():
             title = line[4]
             credentials = line[5]
             userName = line[6]
-            password = line[6]
+            password = line[7]
             db.Users.update_or_insert(employeeID=employeeID, first_name=first_name, last_name=last_name, email=email, title=title, credentials=credentials, userName=userName, password=password)
             lines += 1
         session.lines = lines
@@ -284,8 +284,7 @@ def importfillStations():
             Prescriber = line[8]
             Refill = line[9]
             DAW = line[10]
-            db.fillStations.update_or_insert(fillStations=fillStations, firstName=firstName, lastName=lastName, RX=RX, NDC=NDC, Brand=Brand, Generic=Generic, SIG=SIG, 
-            Prescriber=Prescriber, Refill=Refill, DAW=DAW)
+            db.fillStations.update_or_insert(fillStations=fillStations, firstName=firstName, lastName=lastName, RX=RX, NDC=NDC, Brand=Brand, Generic=Generic, SIG=SIG, Prescriber=Prescriber, Refill=Refill, DAW=DAW)
             lines += 1
         session.lines = lines
         response.flash = str(lines) + " lines read HELLO WAYNE"
