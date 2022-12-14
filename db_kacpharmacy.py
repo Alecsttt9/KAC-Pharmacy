@@ -55,9 +55,9 @@ db.define_table(
    Field('ndcNumber'),
    Field('Quantity'),
    Field('SIG'),
-   Field('Prescriber', 'reference Prescribers'),
+   Field('Prescriber'),
    Field('Refills'),
-   Field('drugSchedule', 'reference drugSchedules'),
+   Field('drugSchedule'),
    format = '%(rxNumber)s'
    )
 
@@ -67,7 +67,7 @@ db.define_table(
    Field('brandName'),
    Field('genericName'),
    Field('quanity'),
-   Field('drugSchedule', 'reference drugSchedules')
+   Field('drugSchedule')
 )
 db.define_table(
     'leadSource',
@@ -85,12 +85,12 @@ db.define_table(
    Field('Address_1'),
    Field('Address_2'),
    Field('City'),
-   Field('stateName', 'reference States'),
+   Field('stateName'),
    Field('zipCode'),
-   Field('Prescriber', 'reference Prescribers'), # db.Prescribers
-   Field('Insurer', 'reference Insurances'), # db.Insurance
-   Field('Allergies', 'reference allergyProfiles'),
-   Field('Prescriptions', 'reference Prescriptions'),
+   Field('Prescriber'), # db.Prescribers
+   Field('Insurer'), # db.Insurance
+   Field('Allergies'),
+   Field('Prescriptions'),
    Field('leadSource'),
    format = '%(lastName)s'
 )
@@ -111,12 +111,12 @@ db.define_table(
    'fillStations',
    Field('firstName'),
    Field('lastName'),
-   Field('rxNumber', 'reference Prescriptions'),
+   Field('rxNumber'),
    Field('ndcNumber'),
    Field('brandName'),
    Field('genericName'),
    Field('SIG'),
-   Field('Prescriber', 'reference Prescribers'),
+   Field('Prescriber'),
    Field('Refill'),
    Field('DAW')
 )

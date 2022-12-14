@@ -1,7 +1,7 @@
 
 """
 This file is for dynamically editing the files 
-to read csv files into the web2py database
+to read csv files into DEFAULT.PY file
 
 """
 #Having trouble with this table
