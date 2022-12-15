@@ -4,8 +4,8 @@ import datetime
 
 db.define_table(
     'States',
-    Field('stateName'),
-    Field('abbreviation'),
+    Field('stateName', unique = True),
+    Field('abbreviation', unique = True),
     format = '%(stateName)s')
 
 # This creates the Prescribers Table
@@ -13,11 +13,11 @@ db.define_table(
    'Prescribers',
    Field('firstName'),
    Field('lastName'),
-   Field('deaNumber'),
-   Field('npiNumber'),
+   Field('deaNumber', unique = True, requires = IS_MATCH('[\d\-\(\) ]+')),
+   Field('npiNumber', unique = True, requires = IS_MATCH('[\d\-\(\) ]+')),
    Field('Address'),
-   Field('phoneNumber'),
-   Field('faxNumber'),
+   Field('phoneNumber', requires = IS_MATCH('[\d\-\(\) ]+')),
+   Field('faxNumber', requires = IS_MATCH('[\d\-\(\) ]+')),
    format = '%(lastName)s')
 
 db.define_table(
@@ -25,16 +25,16 @@ db.define_table(
    #Field('Insurer id', notnull = True, unique = True), 
    Field('companyName'),
    Field('policyNumber'),
-   Field ('binNumber'), 
-   Field('phoneNumber'),
-   Field('primaryCardholder')
+   Field ('binNumber', requires = IS_MATCH('[\d\-\(\) ]+')), 
+   Field('phoneNumber', requires = IS_MATCH('[\d\-\(\) ]+')),
+   Field('primaryCardholder', requires = IS_MATCH('[\d\-\(\) ]+')),
    )
 
 db.define_table(
     'allergyProfiles',
     Field('Status'),
     Field('medicationName'),
-    Field('entryDate', type='datetime', default=datetime.datetime.now()),
+    Field('entryDate'),
     Field('Severity'),
     Field('Reaction'))
 
@@ -48,9 +48,10 @@ db.define_table(
 
 db.define_table(
    'Prescriptions',
-   Field('rxNumber'),
+   Field('rxNumber', unique = True),
    Field('brandName'),
    Field('genericName'),
+   Field('npiNumber'),
    Field('DAW'),
    Field('ndcNumber'),
    Field('Quantity'),
@@ -66,13 +67,12 @@ db.define_table(
    Field('ndcNumber'),
    Field('brandName'),
    Field('genericName'),
-   Field('quanity'),
+   Field('Quantity'),
    Field('drugSchedule')
 )
 db.define_table(
     'leadSource',
-    Field('leadSource'),
-    Field('leadSource'),
+    Field('leadSource', unique = True),
     format = '%(leadSource)s')
 
 db.define_table(
@@ -81,7 +81,7 @@ db.define_table(
    Field('firstName'),
    Field('lastName'),
    Field('DOB'),
-   Field('phoneNumber'),
+   Field('phoneNumber', requires = IS_MATCH('[\d\-\(\) ]+')),
    Field('Address_1'),
    Field('Address_2'),
    Field('City'),

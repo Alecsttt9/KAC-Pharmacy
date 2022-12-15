@@ -127,16 +127,231 @@ def importInsurances():
         reader =  csv.reader(fp_in)
         for line in reader:         # each line is read into a list
             companyName = line[0]
+            print(companyName)
             policyNumber = line [1]
             binNumber = line[2]
             phoneNumber = line[3]
-            primaryCardholder = line[4]			
-            db.Insurances.update_or_insert(companyName=companyName, policyNumber=policyNumber, binNumber=binNumber, phoneNumber=phoneNumber, 
+            primaryCardholder = line[4]
+            db.Insurances.update_or_insert(companyName=companyName, policyNumber=policyNumber, binNumber=binNumber, phoneNumber=phoneNumber,
 			primaryCardholder=primaryCardholder
 			)
             lines += 1
         session.lines = lines
         response.flash = str(lines) + " lines read"
+    except Exception  as e:
+        response.flash = "ERROR: " + str(e)
+    #redirect(URL(r=request, f='registrationsb'))
+    response.view = "import_results.html"
+    return dict()
+
+def importallergyProfiles():
+    import csv   #for python to understand you're using csv file
+    import sys
+    import os
+    lines = 0
+    db.allergyProfiles.truncate()
+    try:
+        fp_in = open(os.path.join(request.folder, 'static', "MockallergyProfilesTable.csv"),"r")
+        reader =  csv.reader(fp_in)
+        for line in reader:         # each line is read into a list
+            medicationName = line[0]
+            entryDate = line [1]
+            Severity = line[2]
+            Reaction = line[3]
+            db.allergyProfiles.update_or_insert(medicationName=medicationName, entryDate=entryDate, Severity=Severity, Reaction=Reaction)
+            lines += 1
+        session.lines = lines
+        response.flash = str(lines) + " lines read"
+    except Exception  as e:
+        response.flash = "ERROR: " + str(e)
+    #redirect(URL(r=request, f='registrationsb'))
+    response.view = "import_results.html"
+    return dict()
+
+def importdrugSchedules():
+    import csv   #for python to understand you're using csv file
+    import sys
+    import os
+    lines = 0
+    try:
+        fp_in = open(os.path.join(request.folder, 'static', "MockdrugSchedulesTable.csv"),"r")
+        reader =  csv.reader(fp_in)
+        for line in reader:         # each line is read into a list
+            Schedule = line[0]
+            Classification = line [1]
+            db.drugSchedules.update_or_insert(Schedule=Schedule, Classification=Classification,)
+            lines += 1
+        session.lines = lines
+        response.flash = str(lines) + " lines read"
+    except Exception  as e:
+        response.flash = "ERROR: " + str(e)
+    #redirect(URL(r=request, f='registrationsb'))
+    response.view = "import_results.html"
+    return dict()
+
+def importPrescriptions():
+    import csv   #for python to understand you're using csv file
+    import sys
+    import os
+    lines = 0
+    db.Prescriptions.truncate()
+    try:
+        fp_in = open(os.path.join(request.folder, 'static', "MockPrescriptionsTable.csv"),"r")
+        reader =  csv.reader(fp_in)
+        for line in reader:         # each line is read into a list
+            rxNumber = line[0]
+            brandName = line [1]
+            genericName = line[2]
+            npiNumber = line[3]
+            DAW = line[4]
+            ndcNumber = line[5]
+            Quantity = line[6]
+            SIG = line[7]
+            Prescriber = line[8]
+            Refills = line[9]
+            drugSchedule = line[10]
+            db.Prescriptions.update_or_insert(rxNumber=rxNumber, brandName=brandName, genericName=genericName, npiNumber=npiNumber, 
+			DAW=DAW, ndcNumber=ndcNumber, Quantity=Quantity, SIG=SIG, Prescriber=Prescriber, Refills=Refills, drugSchedule=drugSchedule )
+            lines += 1
+        session.lines = lines
+        response.flash = str(lines) + " lines read"
+    except Exception  as e:
+        response.flash = "ERROR: " + str(e)
+    #redirect(URL(r=request, f='registrationsb'))
+    response.view = "import_results.html"
+    return dict()
+
+def importMedications():
+    import csv   #for python to understand you're using csv file
+    import sys
+    import os
+    lines = 0
+    try:
+        fp_in = open(os.path.join(request.folder, 'static', "Medications.csv"),"r")
+        reader =  csv.reader(fp_in)
+        for line in reader:         # each line is read into a list
+            ndcNumber = line [0]
+            brandName = line[1]
+            genericName = line[2]
+            Quantity = line[3]
+            drugSchedule = line[4]
+            db.Medications.update_or_insert(ndcNumber=ndcNumber, brandName=brandName, genericName=genericName,
+			Quantity=Quantity, drugSchedule=drugSchedule)
+            lines += 1
+        session.lines = lines
+        response.flash = str(lines) + " lines read"
+    except Exception  as e:
+        response.flash = "ERROR: " + str(e)
+    #redirect(URL(r=request, f='registrationsb'))
+    response.view = "import_results.html"
+    return dict()
+
+def importleadSource():
+    import csv   #for python to understand you're using csv file
+    import sys
+    import os
+    lines = 0
+    try:
+        fp_in = open(os.path.join(request.folder, 'static', "Lead_Source.csv"),"r")
+        reader =  csv.reader(fp_in)
+        for line in reader:         # each line is read into a list
+            leadSource = line[0]
+            db.leadSource.update_or_insert(leadSource=leadSource)
+            lines += 1
+        session.lines = lines
+        response.flash = str(lines) + " lines read"
+    except Exception  as e:
+        response.flash = "ERROR: " + str(e)
+    #redirect(URL(r=request, f='registrationsb'))
+    response.view = "import_results.html"
+    return dict()
+
+def importPatients():
+    import csv   #for python to understand you're using csv file
+    import sys
+    import os
+    lines = 0
+    db.Patients.truncate()
+    try:
+        fp_in = open(os.path.join(request.folder, 'static', "Patients.csv"),"r")
+        reader =  csv.reader(fp_in)
+        for line in reader:         # each line is read into a list
+            firstName = line[0]
+            lastName = line[1]
+            DOB = line[2]
+            phoneNumber = [3]
+            Address_1 = line[4]
+            Address_2 = line[5]
+            City = line[6]
+            stateName = line[7]
+            zipCode = line[8]
+            Prescriber = line[9]
+            Insurer = line[10]
+            Allergies = line[11]
+            Prescriptions = line[12]
+            leadSource = line[13]
+            db.Patients.update_or_insert(firstName=firstName, lastName=lastName, DOB=DOB, phoneNumber=phoneNumber, Address_1=Address_1, Address_2=Address_2, City=City, stateName=stateName, zipCode=zipCode, Prescriber=Prescriber, Insurer=Insurer, Allergies=Allergies, Prescriptions=Prescriptions, leadSource=leadSource)
+            lines += 1
+        session.lines = lines
+        response.flash = str(lines) + " lines read HELLO WAYNE"
+    except Exception  as e:
+        response.flash = "ERROR: " + str(e)
+    #redirect(URL(r=request, f='registrationsb'))
+    response.view = "import_results.html"
+    return dict()
+
+def importUsers():
+    import csv   #for python to understand you're using csv file
+    import sys
+    import os
+    lines = 0
+    db.Users.truncate()
+    try:
+        fp_in = open(os.path.join(request.folder, 'static', "Users.csv"),"r")
+        reader =  csv.reader(fp_in)
+        for line in reader:         # each line is read into a list
+            employeeID = line[0]
+            first_name = line[1]
+            last_name = line[2]
+            email = line[3]
+            title = line[4]
+            credentials = line[5]
+            userName = line[6]
+            password = line[7]
+            db.Users.update_or_insert(employeeID=employeeID, firstName=first_name, lastName=last_name, email=email, title=title, credentials=credentials, userName=userName, password=password)
+            lines += 1
+        session.lines = lines
+        response.flash = str(lines) + " lines read HELLO WAYNE"
+    except Exception  as e:
+        response.flash = "ERROR: " + str(e)
+    #redirect(URL(r=request, f='registrationsb'))
+    response.view = "import_results.html"
+    return dict()
+
+def importfillStations():
+    import csv   #for python to understand you're using csv file
+    import sys
+    import os
+    lines = 0
+    db.fillStations.truncate()
+    try:
+        fp_in = open(os.path.join(request.folder, 'static', "Fill_Stations.csv"),"r")
+        reader =  csv.reader(fp_in)
+        for line in reader:         # each line is read into a list
+            firstName = line[0]
+            lastName = line[1]
+            rxNumber = [2]
+            ndcNumber = line[3]
+            brandName = line[4]
+            genericName = line[5]
+            SIG = line[6]
+            Prescriber = line[7]
+            Refill = line[8]
+            DAW = line[9]
+            db.fillStations.update_or_insert(firstName=firstName, lastName=lastName, rxNumber=rxNumber, ndcNumber=ndcNumber, brandName=brandName, genericName=genericName, SIG=SIG, Prescriber=Prescriber, Refill=Refill, DAW=DAW)
+            lines += 1
+        session.lines = lines
+        response.flash = str(lines) + " lines read HELLO WAYNE"
     except Exception  as e:
         response.flash = "ERROR: " + str(e)
     #redirect(URL(r=request, f='registrationsb'))
