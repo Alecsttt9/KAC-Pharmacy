@@ -18,7 +18,7 @@ db.define_table(
    Field('Address'),
    Field('phoneNumber', requires = IS_MATCH('[\d\-\(\) ]+')),
    Field('faxNumber', requires = IS_MATCH('[\d\-\(\) ]+')),
-   format = '%(lastName)s')
+   format = '%(firstName)s %(lastName)s')
 
 db.define_table(
    'Insurances',
@@ -36,7 +36,9 @@ db.define_table(
     Field('medicationName'),
     Field('entryDate'),
     Field('Severity'),
-    Field('Reaction'))
+    Field('Reaction')
+    
+)
 
 db.define_table(
    'drugSchedules',
@@ -58,7 +60,7 @@ db.define_table(
    Field('SIG'),
    Field('Prescriber'),
    Field('Refills'),
-   Field('drugSchedule'),
+   Field('drugSchedule', 'reference drugSchedules'),
    format = '%(rxNumber)s'
    )
 
@@ -85,13 +87,13 @@ db.define_table(
    Field('Address_1'),
    Field('Address_2'),
    Field('City'),
-   Field('stateName'),
+   Field('stateName', 'reference States'),
    Field('zipCode'),
-   Field('Prescriber'), # db.Prescribers
+   Field('Prescriber', 'reference Prescribers'), # db.Prescribers
    Field('Insurer'), # db.Insurance
    Field('Allergies'),
-   Field('Prescriptions'),
-   Field('leadSource'),
+   Field('Prescriptions', 'reference Prescriptions'),
+   Field('leadSource', 'reference leadSource'),
    format = '%(lastName)s'
 )
 
