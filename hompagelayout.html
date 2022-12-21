@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>KAC Pharmacy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/78fc201897.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+h1 {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #553739;
+    text-transform: uppercase;
+}
+
+.container-fluid {
+  padding: 60px 50px;
+}
+.margin {
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+body {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 2.0;
+  }
+  p {
+    font-size: 20px;
+}
+  .bg-1 { 
+    background-color: #F1b498; /* Peach */
+    color: #2FC284;
+  }
+  .bg-2 { 
+    background-color: #6f1a07; /* Rasin Black */
+    color: #f1bf98;
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .bg-3 { 
+    background-color: #553739; /* Dark Liver Horse */
+    color: #F1b498;
+  }
+  .bg-4 { 
+    background-color: #955e42; /* Brown Sugar */
+    color: #F1b498
+  }
+  .bg-5 {
+    background-color: #748e45;
+    color: #232
+  }
+
+  .col-sm-4 {
+    text-align: center;
+    margin: 25px 0;
+  }
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 15px;
+    letter-spacing: 5px;
+    background-color:  #553739;
+    color: #EC9070;
+  }
+.navbar .li {
+  border: 1px solid #6f1a07;
+  background-color: #4d1e10;
+  color: #2FC284;
+}
+  .btn {
+  padding: 5px 15px;
+  background-color: #553739;
+  color: #D9976B;
+  border-radius: 0;
+  transition: .2s;
+  font-size: xx-large;
+  }
+  .thumbnail {
+  padding: 0 0 15px 0;
+  border: none;
+  border-radius: 0;
+    background-color: #F1b498;
+    color: #ffffff;
+  }
+.panel {
+    border: 1px solid #6f1a07;
+    border-radius:0;
+    transition: box-shadow 0.5s;
+    width: 100%;
+    height: 100%;
+}
+.panel-heading {
+    color: #f1bf98;
+    background-color: #6F1A07;
+    border-bottom: 3px solid transparent;  
+}
+.panel-body .col-sm-3{
+    width: 25%; 
+    ; 
+    padding: 2%;
+}
+.panel-footer {
+    height: 15%;
+    background-color: #fff;
+}
+.panel-footer .btn:hover {
+  border: 1px solid #6f1a07;
+  background-color: #4d1e10;
+  color: #2b2118;
+}
+.panel-footer .btn {
+    background-color: #553739;
+    color: #D9976B;
+}
+.logo-small {
+  color: #f4511e;
+  font-size: 50px;
+}
+
+.logo {
+  color: #f4511e;
+  font-size: 200px;
+}
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->   
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a style = "color: #2FC284" class = "navbar-link" href="homepagelayout.html">
+        <span class="glyphicon glyphicon-home"></span>  Home
+      </a>
+      <a style = "color: #2FC284" class = "navbar-link" href ="userprofile.html">
+        <i class="fa-regular fa-id-card"></i>  User Profile
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a style = "color: #F1b498" class = "navbar-link" href="patientlookup.html"><i class="fa-solid fa-hospital-user"></i>Patient Lookup</a></li>
+        <li><a style = "color: #F1b498" class = "navbar-link" href="prescriberlu.html"><i class="fa-solid fa-user-doctor"></i>Prescriber Lookup</a></li>
+        <li><a style = "color: #F1b498" class = "navbar-link" href="inventory.html"><i class="fa-solid fa-warehouse"></i>Inventory</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>    
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+  <h1>Welcome!</h1>
+  <h3>Click the icon below to log into your profile.</h3>
+  <a href = "userlogin.html">
+  <img src="images/KACrxlogo.png" class="img-responsive img-circle" style="display:inline" alt="KAC Pharmacy" width= "450"></a>
+  
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid text-justified">
+    <h1 class = "margin">Intranet</h1>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="thumbnail1">
+            <p>Email marketing allows you to establish a personal link with your patients. You stay on top of things and remind everyone of the care and expertise you provide.</p>
+            <a href = "email.html"><button type="button" class="btn bg-2 btn-primary btn-lg"><span class="glyphicon glyphicon-envelope"></span>   Email</button></a>
+        </div>
+    </div>
+   
+    <div class="col-sm-4">
+        <div class="thumbnail1">
+        <p>A dedicated resource space on your website that addresses common customer queries about your products or services. A pillar of great customer service.</p>  
+        <a href = "faq.html"><button type="button" class="btn bg-2 btn-primary btn-lg"><span class="glyphicon glyphicon-search"></span>   FAQ</button></a>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="thumbnail1">
+        <p>The Office of Continuing Professional Development seeks to strategically drive pharmacy practice innovation, transformation, and increased cultural awarness.</p>
+        <a href = "ce.html"><button type="button" class="btn bg-2 btn-primary btn-lg"><span class="glyphicon glyphicon-book"></span>    Continuing Education</button></a>
+        </div>
+    </div>
+</div>
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-4">
+    <div class = "text-center">
+        <h1 class = "margin">Workflow</h1>
+            <div class = "row">
+        </div>
+    </div>
+        <div class="col-md-3">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <h2>Data Entry</h2>
+                </div>
+                <div class="panel-body">
+                    <p> Input information about patient prescriptions into record-keeping programs.</p>
+                    <img src="images/de.jpg" class="img-responsive" style="display:inline" alt="Data Entry">
+                </div>
+                <div class="panel-footer">
+                    <a href = "dataentry.html"><button type="button" class="btn bg-2 btn-primary btn-lg"><i class="fas fa-prescription"></i></button></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <h2>PV1</h2>
+                </div>
+                <div class="panel-body">
+                    <p> Pharmacist upholds integrity of the clinical prescription review process.</p>
+                    <img src="images/pv1.jpg" class="img-responsive" style="display:inline" alt="Pharmacist Verification 1">
+                </div>
+                <div class="panel-footer">
+                    <a href = "#"><button type="button" class="btn bg-2 btn-primary btn-lg"><i class="fa-brands fa-stack-overflow"></i></button></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <h2>Fill Station</h2>
+                </div>
+                <div class="panel-body">
+                    <p> Read medication orders and prescriptions, preparing labels and pharmaceutical therapies.</p> 
+                    <img src="images/fillstation.jpg" class="img-responsive" style="display:inline" alt="Fill Station" >
+                </div>
+                <div class="panel-footer">
+                    <a href = "#"><button type="button" class="btn bg-2 btn-primary btn-lg"><i class="fa-solid fa-pills"></i></button></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <h2>PV2</h2>
+                </div>
+                <div class="panel-body">
+                    <p>  Check the accuracy of the prescription fulfillment process.</p>
+                    <img src="images/pv2.jpg" class="img-responsive" style="display:inline" alt="Pharmacist Verification 2">
+                </div>
+                <div class="panel-footer">
+                    <a href = "#"><button type="button" class="btn bg-2 btn-primary btn-lg"><i class="fa-solid fa-check-double"></i></button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<footer class="container-fluid bg-3 text-center">
+  <p>KAC Pharmacy &copy; 2022 </p> 
+  <p><a style = "color:#2FC284" href="https://www.tri-c.edu/programs/information-technology/programming-and-development/clevelandcodes.html">Cleveland Codes Software Developers Academy &copy; 2022</a></p> 
+</footer>  
+
+</body>
+</html>
+
