@@ -1,13 +1,21 @@
-{{extend 'layout.html'}}
+{{extend 'kacLayout.html'}}
 <h1>This is the testdb.html</h1>
 <table>
     <tr>
-        <th width="10%">Name</th><th width="10%">Insurer</th><th width="20%">Phone Number</th>
+        <th width="10%">First Name</th><th width="10%">Last Name</th><th width="10%">DOB</th><th width="10%">Phone Number</th><th width="10%">Address One</th><th width="10%">City</th>
+        <th width="10%">State</th><th width="10%">Zip Code</th><th width="10%">Prescriber</th><th width="10%">Insurance</th>
+        <th width="10%">Allergies</th><th width="10%">Prescriptions</th><th width="10%">Lead Source</th>
     </tr>
-{{rows = db(db.Patients.lastName != None).select()}}
-{{for row in rows:}}
-   <tr>
-       <td>{{=row.lastName}}</td><td>{{=row.Insurer}}</td><td>{{=row.phoneNumber}}</td>
+{{ print("Hello")}}
+{{rows = db.executesql('SELECT p.*, s.stateName sName, prs.firstName prsfn, prs.lastName prsln, l.leadSource lsource \
+                        FROM Patients p, States s, Prescribers prs, leadSource l \
+                        WHERE p.stateName=s.id AND p.Prescriber = prs.id AND p.leadSource=l.id', as_dict=True)
+   for row in rows:
+        #print(row)}}
+    <tr>
+       <td>{{=row["firstname"]}}</td><td>{{=row["lastname"]}}</td><td>{{=row["dob"]}}</td><td>{{=row["phonenumber"]}}</td><td>{{=row["address_1"]}}</td><td>{{=row["city"]}}</td>
+       <td>{{=row["sName"]}}</td><td>{{=row["zipcode"]}}</td><td>{{=row["prsln"]}}</td><td>{{=row["insurer"]}}</td><td>{{=row["allergies"]}}</td><td>{{=row["prescriptions"]}}</td> <td>{{=row["lsource"]}}</td>
    </tr>
+
 {{pass}}
 </table>
