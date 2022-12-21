@@ -35,7 +35,7 @@ body {
 }
   .bg-1 { 
     background-color: #F1b498; /* Peach */
-    color: #748e45;
+    color: #2FC284;
   }
   .bg-2 { 
     background-color: #6f1a07; /* Rasin Black */
@@ -45,7 +45,7 @@ body {
   }
   .bg-3 { 
     background-color: #553739; /* Dark Liver Horse */
-    color: #555555;
+    color: #F1b498;
   }
   .bg-4 { 
     background-color: #955e42; /* Brown Sugar */
@@ -71,6 +71,11 @@ body {
     background-color:  #553739;
     color: #EC9070;
   }
+.navbar .li {
+  border: 1px solid #6f1a07;
+  background-color: #4d1e10;
+  color: #2FC284;
+}
   .btn {
   padding: 5px 15px;
   background-color: #553739;
@@ -87,20 +92,16 @@ body {
     color: #ffffff;
   }
 .panel {
-  border: 1px solid #6f1a07;
-  border-radius:0;
-  transition: box-shadow 0.5s;
-  height: fit-content;
-}
-.panel-default {
-    height: 70%;
+    border: 1px solid #6f1a07;
+    border-radius:0;
+    transition: box-shadow 0.5s;
+    width: 100%;
+    height: 100%;
 }
 .panel-heading {
-    height: 15%;
     color: #f1bf98;
     background-color: #6F1A07;
-    border-bottom: 3px solid transparent;
-  
+    border-bottom: 3px solid transparent;  
 }
 .panel-body .col-sm-3{
     width: 25%; 
@@ -129,31 +130,36 @@ body {
   color: #f4511e;
   font-size: 200px;
 }
+
   </style>
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- Navbar -->   
 <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                       
+        <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">
+      <a style = "color: #2FC284" class = "navbar-link" href="homepagelayout.html">
+        <span class="glyphicon glyphicon-home"></span>  Home
+      </a>
+      <a style = "color: #2FC284" class = "navbar-link" href ="userprofile.html">
+        <i class="fa-regular fa-id-card"></i>  User Profile
+      </a>
+    </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li></li>
-        <li><a href="http://127.0.0.1:8000/KACPharmacy/default/Patients">Patient Lookup</a></li>
-        <li><a href="http://127.0.0.1:8000/KACPharmacy/default/Prescribers">Prescriber Lookup</a></li>
-        <li><a href="http://127.0.0.1:8000/KACPharmacy/default/Medications">Mediction Lookup</a></li>
+        <li><a style = "color: #F1b498" class = "navbar-link" href="patientlookup.html"><i class="fa-solid fa-hospital-user"></i>Patient Lookup</a></li>
+        <li><a style = "color: #F1b498" class = "navbar-link" href="prescriberlu.html"><i class="fa-solid fa-user-doctor"></i>Prescriber Lookup</a></li>
+        <li><a style = "color: #F1b498" class = "navbar-link" href="inventory.html"><i class="fa-solid fa-warehouse"></i>Inventory</a></li>
       </ul>
-      </div>
     </div>
   </div>
-</nav>
+</nav>  
 <!-- MAIN CONTENT HERE -->
 <!-- Begin page content -->
 <div class="container-fluid main-container">
@@ -164,8 +170,8 @@ body {
 <!-- Footer -->
 <footer class="container-fluid bg-3 text-center">
   <p>KAC Pharmacy &copy; 2022 </p> 
-  <p><a href="https://www.tri-c.edu/programs/information-technology/programming-and-development/clevelandcodes.html">Cleveland Codes Software Developers Academy &copy; 2022</a></p> 
-</footer>
+  <p><a style = "color:#2FC284" href="https://www.tri-c.edu/programs/information-technology/programming-and-development/clevelandcodes.html">Cleveland Codes Software Developers Academy &copy; 2022</a></p> 
+</footer>  
 
 </body>
 </html>
