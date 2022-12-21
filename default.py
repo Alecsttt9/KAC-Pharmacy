@@ -65,7 +65,6 @@ def fillStations():
     return dict(grid=grid)
 
 def testdb():
-    rows = db( db.Patients.lastName != None).select()
     response.view = "testdb.html";
     return locals();
 
@@ -279,7 +278,7 @@ def importPatients():
             firstName = line[0]
             lastName = line[1]
             DOB = line[2]
-            phoneNumber = [3]
+            phoneNumber = line[3]
             Address_1 = line[4]
             Address_2 = line[5]
             City = line[6]
