@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>KAC Pharmacy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/78fc201897.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/78fc201897.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<script>
+    $(document).ready(function() {
+    var panels = $('.user-infos');
+    var panelsButton = $('.dropdown-user');
+    panels.hide();
+
+    //Click dropdown
+    panelsButton.click(function() {
+        //get data-for attribute
+        var dataFor = $(this).attr('data-for');
+        var idFor = $(dataFor);
+
+        //current button
+        var currentButton = $(this);
+        idFor.slideToggle(400, function() {
+            //Completed slidetoggle
+            if(idFor.is(':visible'));
+        });
+    });
+  });
+  </script>
+    <style>
+  body {
+      font-size: 20px;
+      font-family: 'Times New Roman', Times, serif;
+      line-height: 2.0;
+      background-color: #955e42;
+      height: 100vh;
+  }
+  th {
+    box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+		-webkit-box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+		-moz-box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+    text-align: center;
+    font-size:large;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    background-color: #C5A49B;
+    color: #57393B;
+    
+}
+td {
+  background: #F1b498;
+  color: #955e42;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+}
+td > a {
+    color:#2FC284;
+  }
+  .table-responsive{
+      margin: 150px 200px 150px 200px;
+			background-color: #F1b498;
+			position: relative;
+			justify-content: center;
+			padding: 10px;
+			box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+			-webkit-box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+			-moz-box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+     
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }
+
+  .container {
+    padding-bottom: 30px; 
+    padding-top: 30px;
+  
+  }
+
+    .bg-3 { 
+    background-color: #553739; /* Dark Liver Horse */
+    color: #F1b498;
+  }
+    .bg-4 { 
+      background-color: #955e42; /* Brown Sugar */
+      color: #F1b498
+    }
+    .navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 15px;
+      letter-spacing: 5px;
+      background-color:  #553739;
+      color: #EC9070;
+    }
+  .navbar .li {
+    border: 1px solid #6f1a07;
+    background-color: #4d1e10;
+    color: #2FC284;
+  }
+  .btn {
+  margin-top: 50px;
+  background-color: #C5A49B;
+    color: #57393B;
+  border-color: #2FC284;
+  border-radius: 3px;
+  transition: .2s;
+  font-size: x-large;
+  box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+			-webkit-box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+			-moz-box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+     
+}
+.btn:hover > a {
+ color: #57393B;
+}
+
+
+  </style>
+</head>
+
+    <!--nav-->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a style = "color: #2FC284" class = "navbar-link" href="homepagelayout.html">
+            <span class="glyphicon glyphicon-home"></span>  Home
+          </a>
+          <a style = "color: #2FC284" class = "navbar-link" href ="userprofile.html">
+            <i class="fa-regular fa-id-card"></i>  User Profile
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a style = "color: #F1b498" class = "navbar-link" href="patientlookup.html"><i class="fa-solid fa-hospital-user"></i>Patient Lookup</a></li>
+            <li><a style = "color: #F1b498" class = "navbar-link" href="prescriberlu.html"><i class="fa-solid fa-user-doctor"></i>Prescriber Lookup</a></li>
+            <li><a style = "color: #F1b498" class = "navbar-link" href="inventory.html"><i class="fa-solid fa-warehouse"></i>Inventory</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav> 
+    </div>
+    <body>
+                
+                  <div class="container">
+                    <div class="table-responsive">
+                      <table class= "table table-hover">
+                        <div class="col-md-6"> 
+                    <thead>
+                      <tr>
+                        <th> Sheena Stacy</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Department:</td>
+                        <td>Pharmacy</td>
+                      </tr>
+                      <tr>
+                        <td>Hire date:</td>
+                        <td>06/23/2013</td>
+                      </tr>
+                      <tr>
+                        <td>Date of Birth:</td>
+                        <td>01/24/1988</td>
+                      </tr>
+                      <tr>
+                        <td>Gender:</td>
+                        <td>Female</td>
+                      </tr>
+                        <tr>
+                        <td>Home Address:</td>
+                        <td>2540 Brownstone Circle<br>Painsville, OH 44157</td>
+                      </tr>
+                      <tr>
+                        <td>Email:</td>
+                        <td><a href="mailto:user1@kacpharmacy.com">user1@kacpharmacy.com</a></td>
+                      </tr>
+                        <td>Phone Number:</td>
+                        <td>300-555-2357(Home)<br>330-552-1234(Mobile)</td>    
+                      </tr>
+                      <tr>
+                        <td>Emergency Contact:</td>
+                        <td><a href="user1ee.html">Michelle Stacy</a></td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <td><a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm"><i class="glyphicon glyphicon-edit"></i></a></td>
+                      <td><a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm"><i class="glyphicon glyphicon-remove"></i></a></td>
+                    </tfoot>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer class="container-fluid bg-3 text-center">
+    <p>KAC Pharmacy &copy; 2022 </p> 
+    <p><a style = "color:#2FC284" href="https://www.tri-c.edu/programs/information-technology/programming-and-development/clevelandcodes.html">Cleveland Codes Software Developers Academy &copy; 2022</a></p> 
+  </footer>
