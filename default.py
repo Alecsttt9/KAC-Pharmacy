@@ -68,6 +68,27 @@ def testdb():
     response.view = "testdb.html";
     return locals();
 
+def prescriberLookup():
+    response.view = "prescriberLookup.html";
+    return locals();
+
+def inventoryLookup():
+    response.view = "inventoryLookup.html";
+    return locals();
+
+def userProfile():
+    response.view = "userProfile.html";
+    return locals();
+
+def userList():
+    response.view = "userProfile.html";
+    return locals();
+
+def about():
+    response.view = 'about.html';
+    return locals();
+
+
 def importStates():
     import csv   #for python to understand you're using csv file
     import sys
