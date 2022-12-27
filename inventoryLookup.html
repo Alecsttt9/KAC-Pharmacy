@@ -1,0 +1,29 @@
+{{extend 'kacLayout2.html'}}
+<h1 class="text-center" style = "color: #F1b498"><i class="fa-solid fa-user-doctor"></i>Inventory</h1>
+<hr>
+<div class="container-fluid bg-4">
+<div class="table-responsive">
+<table class= "table table-hover table-bordered">
+    <tr>
+            <input id="myInput" type="text" name = "search" placeholder="Search Inventory">
+    </tr>
+    <thead>
+        <th>Update</th>
+        <th>NDC Number</th><th>Brand Name</th><th>Generic Name</th><th>On Hand</th><th>On Order</th>
+    </thead>
+    <tbody id="myTable">
+
+{{ print("Hello")}}
+{{rows = db.executesql('SELECT * from Medications', as_dict=True)
+   for row in rows:
+        print(row)}}
+    <tr>
+        <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
+       <td>{{=row["ndcnumber"]}}</td><td>{{=row["brandname"]}}</td><td>{{=row["genericname"]}}</td><td>{{=row["quantity"]}}</td><td>{{=row["drugschedule"]}}</td>
+   </tr>
+
+{{pass}}
+</tbody>
+</table>
+</div>
+</div>

@@ -1,0 +1,31 @@
+{{extend 'kacLayout2.html'}}
+<h1 class="text-center" style = "color: #F1b498"><i class="fa-solid fa-user-doctor"></i>Prescribers</h1>
+<hr>
+<div class="container-fluid bg-4">
+<div class="table-responsive">
+<table class= "table table-hover table-bordered">
+    <tr>
+            <input id="myInput" type="text" name = "search" placeholder="Search Prescriber Profiles">
+    </tr>
+    <thead>
+        <th>Modify Profile</th>
+        <th>First Name</th><th>Last Name</th><th>DEA Number</th><th>NPI Number</th><th>Address</th>
+        <th>Phone Number</th><th>Fax Number</th>
+    </thead>
+    <tbody id="myTable">
+
+{{ print("Hello")}}
+{{rows = db.executesql('SELECT * from Prescribers', as_dict=True)
+   for row in rows:
+        print(row)}}
+    <tr>
+        <td><a href= "#" class="btn btn-sm btn-primary btn-block" role="button">Update</a></td>
+       <td>{{=row["firstname"]}}</td><td>{{=row["lastname"]}}</td><td>{{=row["deanumber"]}}</td><td>{{=row["npinumber"]}}</td><td>{{=row["address"]}}</td><td>{{=row["phonenumber"]}}</td>
+       <td>{{=row["faxnumber"]}}</td>
+   </tr>
+
+{{pass}}
+</tbody>
+</table>
+</div>
+</div>
