@@ -88,6 +88,13 @@ def about():
     response.view = 'about.html';
     return locals();
 
+def email():
+    response.view = 'email.html';
+    return locals();
+
+def faq():
+    response.view = 'faq.html';
+    return locals();
 
 def importStates():
     import csv   #for python to understand you're using csv file
