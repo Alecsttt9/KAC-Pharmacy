@@ -96,7 +96,6 @@ def faq():
     response.view = 'faq.html';
     return locals();
 
-
 def importStates():
     import csv   #for python to understand you're using csv file
     import sys
