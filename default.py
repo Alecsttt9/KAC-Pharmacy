@@ -81,7 +81,7 @@ def userProfile():
     return locals();
 
 def userList():
-    response.view = "userProfile.html";
+    response.view = "userList.html";
     return locals();
 
 def about():
@@ -95,6 +95,19 @@ def email():
 def faq():
     response.view = 'faq.html';
     return locals();
+
+def userLogin():
+    response.view = 'userLogin.html';
+    return locals();
+
+def contEd():
+    response.view = 'contEd.html';
+    return locals();
+
+def resetPassword():
+    response.view = 'resetPassword.html';
+    return locals();
+
 
 def importStates():
     import csv   #for python to understand you're using csv file
