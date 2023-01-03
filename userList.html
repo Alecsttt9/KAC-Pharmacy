@@ -1,11 +1,11 @@
-{{extend 'kacLayout3.html'}}
-<h1 class="text-center" style = "color: #F1b498"><i class="fa-regular fa-id-card"></i>User Profiles</h1>
+{{extend 'kacLayout2.html'}}
+<h1 class="text-center" style = "color: #F1b498"><i class="fa-regular fa-id-card"></i>User List</h1>
 <div class="container">
 <div class="table-responsive">
 <table class= "table table-hover">
 <div class="col-md-6">
     <thead>
-        <th>Employee ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Title</th><th>Credentials</th><th>User Name</th><th>Password</th>
+        <th>Employee ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Title</th><th>Credentials</th><th>User Name</th>
     </thead>
     <tbody id="myTable">
 
@@ -15,14 +15,12 @@
         print(row)}}
     <tr>
         <td>{{=row["employeeid"]}}</td><td>{{=row["firstname"]}}</td><td>{{=row["lastname"]}}</td><td>{{=row["email"]}}</td><td>{{=row["title"]}}</td>
-        <td>{{=row["credentials"]}}</td><td>{{=row["username"]}}</td><td>{{=row["password"]}}</td>
+        <td>{{=row["credentials"]}}</td><td>{{=row["username"]}}</td>
    </tr>
 
 {{pass}}
 </tbody>
 <tfoot>
-    <td><a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm"><i class="glyphicon glyphicon-edit"></i></a></td>
-    <td><a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm"><i class="glyphicon glyphicon-remove"></i></a></td>
 </tfoot>
 </table>
 </div>
