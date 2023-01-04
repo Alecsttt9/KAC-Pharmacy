@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FAQ</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.2.0/css/ionicons.min.css" >
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500|Open+Sans">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/78fc201897.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script>
+     $(function () {
+      $("#datepick").datepicker();
+      });
+  $('.pagination-inner a').on('click', function() {
+		$(this).siblings().removeClass('pagination-active');
+		$(this).addClass('pagination-active');
+  });
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+	// Add minus icon for collapse element which is open by default
+	$(".collapse.show").each(function(){
+		$(this).siblings(".card-header").find(".btn i").html("remove");
+	});
+	
+	// Toggle plus minus icon on show hide of collapse element
+	$(".collapse").on('show.bs.collapse', function(){
+		$(this).parent().find(".card-header .btn i").html("remove");
+	}).on('hide.bs.collapse', function(){
+		$(this).parent().find(".card-header .btn i").html("add");
+	});
+});
+</script>
+<style> 
+  .container {
+    padding-bottom: 30px; 
+    padding-top: 30px;
+  
+  }
+  .container-fluid {
+   margin-bottom: 30px; 
+    margin-top: 15px;
+  
+  }
+h1 {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #553739;
+    text-transform: uppercase;
+}
+body {
+          font-size: 20px;
+          font-family: 'Times New Roman', Times, serif;
+          line-height: 2.0;
+          background-color: #955e42;
+          height: 100vh;
+          
+      }
+.faq-search-wrap {
+    padding: 50px 0 60px;
+}
+
+.faq-search-wrap .form-group .form-control,
+.faq-search-wrap .form-group .dd-handle {
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+
+.faq-search-wrap .form-group .input-group-append {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.faq-search-wrap .form-group .input-group-append .input-group-text {
+    background: transparent;
+    border: none;
+}
+
+.faq-search-wrap .form-group .input-group-append .input-group-text .feather-icon > svg {
+    height: 18px;
+    width: 18px;
+}
+
+.bg-2 {
+    background-color: #F1b498;
+}
+.accordian{
+    margin-bottom: 20px;
+}
+
+.accordion .card {
+    text-align: center;
+    font-size:large;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    background-color: #C5A49B;
+    color: #57393B;
+
+
+}
+.accordion .card .card-header {
+	padding-top: 7px;
+	padding-bottom: 7px;
+	border-radius: 0;
+}
+.accordion .card-header h2 {
+	color: ;
+	font-weight: 500;
+	font-family: "Roboto", sans-serif;
+}
+.accordion .card-header h2 span {
+	float: left;
+	margin-top: 10px;
+}
+
+.accordion .card-header i {
+	color: ;
+	font-size: 1.3rem;
+	margin: 0 6px 0 -10px;
+	font-weight: bold;
+	position: relative;
+	top: 5px;
+}			
+.accordion .card-header button:hover {
+	color: #23384e;
+}
+
+.accordion .card-body {
+	color: #666;
+}
+  .bg-3 { 
+    background-color: #553739; /* Dark Liver Horse */
+    color: #F1b498;
+  }
+  .bg-4 { 
+    background-color: #955e42; /* Brown Sugar */
+    color: #F1b498
+  }
+  .navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 15px;
+      letter-spacing: 5px;
+      background-color:  #553739;
+      color: #EC9070;
+    }
+  .navbar .li {
+    border: 1px solid #6f1a07;
+    background-color: #4d1e10;
+    color: #2FC284;
+  }
+  .btn {
+  margin-top: 50px;
+  background-color: #C5A49B;
+    color: #57393B;
+  border-color: #2FC284;
+  border-radius: 3px;
+  transition: .2s;
+  font-size: medium;
+  box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+			-webkit-box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+			-moz-box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+     
+}
+.btn:hover > a {
+ color: #57393B;
+}
+
+#myInput {
+    margin-left: 15%;
+     
+}
+input[type=text] {
+  width: 130px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+  </style>
+</head>
+<nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a style = "color: #2FC284" class = "navbar-link" href="homepagelayout.html">
+          <span class="glyphicon glyphicon-home"></span>  Home
+        </a>
+        <a style = "color: #2FC284" class = "navbar-link" href ="userprofile.html">
+          <i class="fa-regular fa-id-card"></i>  User Profile
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a style = "color: #F1b498" class = "navbar-link" href="patientlookup.html"><i class="fa-solid fa-hospital-user"></i>Patient Lookup</a></li>
+          <li><a style = "color: #F1b498" class = "navbar-link" href="prescriberlu.html"><i class="fa-solid fa-user-doctor"></i>Prescriber Lookup</a></li>
+          <li><a style = "color: #F1b498" class = "navbar-link" href="inventory.html"><i class="fa-solid fa-warehouse"></i>Inventory</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav> 
+</div> 
+<body>
+<div class="container-fluid">
+    <!-- Row -->
+    <div class="row">
+        <div class="col-xl-12 pa-0">
+            <div class="faq-search-wrap bg-2">
+                <div class="container">
+                    <h1 class="display-5 text-white mb-20">Ask a question or browse by category below.</h1>
+                    <div class="form-group w-100 mb-0">
+                        <div class="input-group">
+                            <input id="myInput" type="text" name = "search" placeholder="Search By Keywords..">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-lg">
+	<div class="row">
+		<div class="col-lg-8 mx-auto">
+			<div class="accordion mt-5" id="accordionExample">
+				<div class="card">
+					<div class="card-header" id="headingOne">
+						<h2 class="clearfix mb-0">
+							<a class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"><i class="material-icons">add</i> Is KAC Pharmacy right for me?</a>									
+						</h2>
+					</div>
+					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+						<div class="card-body">
+								<div class="media-body">
+									<h5 class="mt-0">Find Your New Pharmacy with a Click</h5>
+									<p>   KAC Pharmacy works best if you fill at least one prescription regularly. You need to be over 18 to get your prescriptions through KAC Pharmacy. If you’re a parent or caregiver, you can manage prescriptions for children under 18 after you've selected your profile or created a new one for yourself.
+                                                    
+                                        To get started, search for and select the medication you were prescribed. On the page with your medication's details, you can check pricing and request a prescription transfer to KAC Pharmacy.
+                                        
+                                        If you don't have a prescription at another pharmacy, then you can tell your prescriber to send your prescription to KAC Pharmacy. After we receive your prescription and our pharmacists review it, we'll notify you to return to KAC Pharmacy and place your medication order.
+                                        
+                                        If you don't currently have any prescriptions, then you can sign up for KAC Pharmacy so you're ready for future prescription needs.
+                                        
+                                        We recommend using your current pharmacy for urgent medication needs like antibiotics or medications you’ll run out of within a week..</p>
+								</div>
+							</div>
+						</div>
+			
+				<div class="card">
+					<div class="card-header" id="headingTwo">
+						<h2 class="clearfix mb-0">
+							<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><i class="material-icons">add</i> Can I manage prescriptions for a child or other family member through KAC Pharmacy?</a>
+						</h2>
+					</div>
+					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+						<div class="card-body">
+								<div class="media-body">
+									<h5 class="mt-0">Are you a caregiver?</h5>
+									<p>If you’re a parent or caregiver, we can help you manage prescriptions for children under 18. Currently we don’t support caregivers managing prescriptions for adults over 18..</p>
+								</div>
+							</div>
+						</div>
+				<div class="card">
+					<div class="card-header" id="headingThree">
+						<h2 class="mb-0">
+							<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><i class="material-icons">add</i> How do I transfer or add a prescription to KAC Pharmacy</a>                     
+						</h2>
+					</div>
+					<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+						<div class="card-body">
+								<div class="media-body">
+									<h5 class="mt-0">Are you ready to see what KAC can offer you?</h5>
+									<p>Search for and select the medication you were prescribed. On the page with your medication's details, you can check pricing and request a prescription transfer to KAC Pharmacy.
+                    
+                                        If you're new to KAC Pharmacy, we'll ask for information needed to transfer your prescription and save this information to your Amazon profile. You'll use this profile to easily request additional prescription transfers.
+                                        
+                                        After we receive your prescription and our pharmacists review it, we'll notify you to return to Amazon Pharmacy and place your medication order.
+                                        
+                                        If you have a newly prescribed medication, you can also contact your prescriber directly and tell them to send your prescription to Amazon Pharmacy. Here’s some information about us that your prescriber may ask for:
+                                        
+                                        <p>Our name: KAC Pharmacy Home Delivery</p>
+                                        
+                                        <p>Our fax: 866-KAC-PHAR</p>
+                                        
+                                        <p>Our address: 1211 KAC Pharmacy Lane, Cleveland, OH, 44106</p>
+                                        
+                                        <p>Our prescriber and pharmacy line: 855-KAC-PHAR</p>
+                                        
+                                        Note: You can also request a prescription transfer by calling us at +1(800)-KAC-PHAR. Prescriptions for controlled substances can only be accepted directly from your prescriber via E-Scribe..</p>
+								</div>
+							</div>
+						</div>
+				<div class="card">
+					<div class="card-header" id="headingFour">
+						<h2 class="mb-0">
+							<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"><i class="material-icons">add</i> Do you take my Insurance?</a>                               
+						</h2>
+					</div>
+					<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+						<div class="card-body">
+								<div class="media-body">
+									<h5 class="mt-0">Become a part of the KAC Pharmacy family today!</h5>
+									 <p>KAC Pharmacy accepts most insurance plans.</p>
+                                            
+                                    <p>To check your insurance price, search for and select the medication you were prescribed. On the page with your medication's details, select Check insurance price.
+                                    
+                                    If you're new to KAC Pharmacy, we'll ask for information needed to transfer your prescription and save this information to your profile. You'll use this profile to easily request additional prescription transfers.
+                                    
+                                    If you want to sign up for KAC Pharmacy to be ready for future prescription needs, we can look up your insurance information for you during signup. You can also enter the information yourself during signup or at any time after signup from your dashboard. Then, you need to search for your medication to check the price from the page with your medication's details, using your profile.
+                                    
+                                    You can also use KAC Pharmacy without insurance. Whether you have insurance coverage or not, we’ll show you your lowest price without insurance, including any savings for members.</p>
+                                </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+</body>
+<footer class="container-fluid bg-3 text-center" style = "width:100%">
+    <p>KAC Pharmacy &copy; 2022 </p> 
+    <p><a style = "color:#2FC284" href="https://www.tri-c.edu/programs/information-technology/programming-and-development/clevelandcodes.html">Cleveland Codes Software Developers Academy &copy; 2022</a></p> 
+</footer>
+</html>
